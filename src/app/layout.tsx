@@ -24,7 +24,7 @@ export default function RootLayout({
   const isProduction = process.env.NODE_ENV === 'production'
 
   return (
-    <html lang='en'>
+    <html lang='en' prefix='og: https://ogp.me/ns#'>
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
