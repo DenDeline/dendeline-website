@@ -1,5 +1,5 @@
 declare namespace NodeJS {
   export interface ProcessEnv {
-    WEBSITE_URL: string
+    WEBSITE_URL?: string
   }
 }

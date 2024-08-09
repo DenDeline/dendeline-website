@@ -3,17 +3,25 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 import { ThemeProvider } from '@mui/material/styles'
-import theme from '@/theme'
 import { CssBaseline } from '@mui/material'
 
-export const metadata: Metadata = {
-  title: "Home - DenDeline's Pages",
-  description: 'DenDeline is Rostislav Statko. Website-portfolio',
-  openGraph: {
+import theme from '@/theme'
+import { getAppUrl } from '@/utils/urls'
+
+export function generateMetadata(): Metadata {
+  return {
+    metadataBase: getAppUrl(),
     title: "Home - DenDeline's Pages",
     description: 'DenDeline is Rostislav Statko. Website-portfolio',
-    type: 'website',
-  },
+    openGraph: {
+      siteName: "DenDeline's Pages",
+      title: "Home - DenDeline's Pages",
+      description: 'DenDeline is Rostislav Statko. Website-portfolio',
+      locale: 'en_US',
+      type: 'website',
+      url: '/',
+    },
+  }
 }
 
 export default function RootLayout({

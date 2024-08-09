@@ -1,11 +1,10 @@
 import type { MetadataRoute } from 'next'
-
-const URL = process.env.WEBSITE_URL
+import { getAppUrl } from '@/utils/urls'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: URL,
+      url: getAppUrl()?.toString() ?? '',
       lastModified: new Date(),
     },
   ]

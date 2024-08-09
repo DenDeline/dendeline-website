@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-const URL = process.env.WEBSITE_URL
+import { getAppUrl } from '@/utils/urls'
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: `${URL}/sitemap.xml`,
+    sitemap: `${getAppUrl()}/sitemap.xml`,
   }
 }
